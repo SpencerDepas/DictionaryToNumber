@@ -1,11 +1,12 @@
 
 public class numberAlgoTwo {
 
-	public static void main(String[] args) {
+	public static int[] numberRenditions() {
 		// TODO Auto-generated method stub
 
-		int myNumber = 6646127;
+		int myNumber = 5967411;
 		int totalNumberCombos = 1;
+		int[] theNumbercombos = new int[20];
 		
 		
 		String sNumber = Integer.toString(myNumber);
@@ -25,8 +26,9 @@ public class numberAlgoTwo {
 				System.out.println("I am  blockSize " + blockSize);
 				System.out.println("I am  (numberLength - blockSize) + 1 ) " + (numberLength - blockSize) + 1 );*/
 
-				
-				System.out.println(sNumber.substring(z, t));
+				theNumbercombos[totalNumberCombos -1] = Integer.parseInt(sNumber.substring(z, t));
+				//System.out.println(Integer.parseInt(sNumber.substring(z, t)));
+				//System.out.println(sNumber.substring(z, t));
 				totalNumberCombos ++;
 			}
 			
@@ -35,6 +37,17 @@ public class numberAlgoTwo {
 		
 		
 		System.out.println("fin    " + totalNumberCombos);
+		
+		return theNumbercombos;
+		
+		/*for(int i = 0; i < theNumbercombos.length; i ++){
+			System.out.println(theNumbercombos[i]);
+		}*/
+		
+		/*for (int myValue: theNumbercombos) {
+		    System.out.println( myValue);
+		}*/
+		
 	}
 
 }

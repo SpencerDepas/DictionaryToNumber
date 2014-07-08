@@ -19,34 +19,43 @@ public class NumberToWord {
 		String[] compatablNnumbers = new String[10];
 
 		
-		System.out.println("Enter your phone number.");
-		int myNumber = in.nextInt();
+		/*System.out.println("Enter your phone number.");
+		int myNumber = in.nextInt();*/
 		
-		int stringToInt;
-		
-		BufferedReader br = new BufferedReader(new FileReader(
-				"C:\\Users\\spencer\\Documents\\Programmming\\Android7.5\\Dictionary_Converter\\FORMATTEDwordsdowithnumbers.txt"));
-
-	
-		//System.out.println(br.readLine().substring(11));
+		int[] myNumber = new int[20];
+		myNumber = numberAlgoTwo.numberRenditions();
 		
 		
-		for (int i = 0; (sCurrentLine = br.readLine()) != null;) {
+		for(int z = 0; z < myNumber.length; z++){
+			int stringToInt;
+			
+			BufferedReader br = new BufferedReader(new FileReader(
+					"C:\\Users\\spencer\\Documents\\Programmming\\Android7.5\\Dictionary_Converter\\dicRes\\FORMATTEDwordsdowithnumbers.txt"));
+		
+		
+			//System.out.println(br.readLine().substring(11));
 			
 			
-
-			stringToInt = Integer.parseInt(sCurrentLine.substring(11));
-					
-			if(myNumber == stringToInt){
-				compatablNnumbers[i] = sCurrentLine;
-				System.out.println(sCurrentLine);
-				i++;
+			for (int i = 0; (sCurrentLine = br.readLine()) != null;) {
+				
+				
+		
+				stringToInt = Integer.parseInt(sCurrentLine.substring(11));
+						
+				if(myNumber[z] == stringToInt){
+					compatablNnumbers[i] = sCurrentLine;
+					System.out.println(sCurrentLine);
+					i++;
+				}
+			
+		
 			}
 		
-
-		}
-		System.out.println("fin");
+	
 		
 		br.close();
+		}
+		System.out.println("fin");
+
 	}
 }
